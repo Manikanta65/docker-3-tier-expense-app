@@ -2,11 +2,13 @@
 
 docker network create roboshop
 
-**********************************************
-# build the docker images from dockerfile
+*******************************************************************************************************************************
+# Build the docker images from dockerfile
 
 docker build -t backend:1.0.0 .
 
-# once image is created use below command to run the images
+*******************************************************************************************************************************
+
+# Once image is created use below command to run the images
 
 docker run -d -p 8080:8080 --name node-app --network roboshop -e DB_HOST="mysql" backend:1.0.0
