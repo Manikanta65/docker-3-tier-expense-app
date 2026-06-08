@@ -7,12 +7,16 @@ services:
     image: manikanta65docker/backend:1.0.0
     build: ./backend
     container_name: node-app
+    environment:
+      - DB_HOST=mysql
     depends_on:
-      - mysql
+      - mysql     
   frontend:
     image: manikanta65docker/frontend:1.0.0
     build: ./frontend
     container_name: frontend
+    ports:
+      - "80:80"
     depends_on:
       - node-app   
 
